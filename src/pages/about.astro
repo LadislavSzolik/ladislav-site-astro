@@ -2,6 +2,9 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { Image } from "astro:assets";
 import pictureJapan from "../images/about/japan-picture.webp";
+const pageTitle = "About";
+const metaDesc =
+   "Ladislav Szolik is a UX designer and software engineer in Zurich, with 10+ years of experience designing and building digital products for leading brands.";
 ---
 
 <style>
@@ -38,7 +41,7 @@ import pictureJapan from "../images/about/japan-picture.webp";
       }
    }
 </style>
-<BaseLayout>
+<BaseLayout pageTitle={pageTitle} metaDesc={metaDesc}>
    <main class="about">
       <h1>About</h1>
       <div class="about-layout">

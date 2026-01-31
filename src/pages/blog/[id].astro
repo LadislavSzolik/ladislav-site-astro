@@ -12,6 +12,7 @@ export async function getStaticPaths() {
 const { blogPost } = Astro.props;
 const { Content } = await render(blogPost);
 const pageTitle = blogPost.data.title;
+const metaDesc = blogPost.data.description;
 const published = "Published on " + blogPost.data.date.toLocaleDateString();
 ---
 
@@ -81,7 +82,7 @@ const published = "Published on " + blogPost.data.date.toLocaleDateString();
    }
 </style>
 
-<BaseLayout pageTitle={pageTitle}>
+<BaseLayout pageTitle={pageTitle} metaDesc={metaDesc}>
    <main class="blog-main">
       <h1>{pageTitle}</h1>
       <p class="publish-date">{published}</p>

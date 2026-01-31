@@ -2,18 +2,12 @@
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import "../styles/global.css";
-const { pageTitle } = Astro.props;
+const { pageTitle, metaDesc } = Astro.props;
 ---
 
 <html lang="en">
    <head>
       <meta charset="utf-8" />
-      <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-      <link
-         href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Crimson+Text:wght@400;600&display=swap"
-         rel="stylesheet"
-      />
       <link
          rel="icon"
          type="image/png"
@@ -29,6 +23,7 @@ const { pageTitle } = Astro.props;
       />
       <link rel="manifest" href="/site.webmanifest" />
       <meta name="viewport" content="width=device-width" />
+      <meta name="description" content={metaDesc} />
       <meta name="generator" content={Astro.generator} />
       <title>{pageTitle}</title>
    </head>

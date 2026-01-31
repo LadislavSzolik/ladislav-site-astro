@@ -4,6 +4,8 @@ import FeaturedBlogs from "../components/FeaturedBlogs.astro";
 import FeaturedProjects from "../components/FeaturedProjects.astro";
 import Companies from "../components/Companies.astro";
 const pageTitle = "Ladislav's site";
+const metaDesc =
+   "Ladislav Szolik designs medical software at Ärztekasse. Previously at Swisscom and Credit Suisse, with a background in software engineering at Accenture. Zurich-based.";
 ---
 
 <style>
@@ -57,7 +59,7 @@ const pageTitle = "Ladislav's site";
       }
    }
 </style>
-<BaseLayout pageTitle={pageTitle}>
+<BaseLayout pageTitle={pageTitle} metaDesc={metaDesc}>
    <main>
       <head-bcg>
          <head-content>

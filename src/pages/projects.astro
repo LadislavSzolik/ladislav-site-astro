@@ -2,6 +2,8 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import FeaturedProjects from "../components/FeaturedProjects.astro";
 const pageTitle = "Selected projects";
+const metaDesc =
+   "UX and product design projects by Ladislav Szolik, including work for Swisscom, Credit Suisse, and healthcare platforms in Switzerland.";
 ---
 
 <style>
@@ -9,7 +11,7 @@ const pageTitle = "Selected projects";
       padding-block-start: 72px;
    }
 </style>
-<BaseLayout pageTitle={pageTitle}>
+<BaseLayout pageTitle={pageTitle} metaDesc={metaDesc}>
    <main class="projects">
       <FeaturedProjects />
    </main>

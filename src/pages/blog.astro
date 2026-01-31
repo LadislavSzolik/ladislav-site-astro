@@ -5,6 +5,8 @@ const allBlogPosts = (await getCollection("blog")).sort(
    (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
 );
 const pageTitle = "Blog";
+const metaDesc =
+   "Blog posts writted by Ladislav Szolik. The blog posts are about digital design and user experience design (UX).";
 ---
 
 <style>
@@ -25,7 +27,7 @@ const pageTitle = "Blog";
       margin: 0.4rem 0;
    }
 </style>
-<BaseLayout pageTitle={pageTitle}>
+<BaseLayout pageTitle={pageTitle} metaDesc={metaDesc}>
    <main class="blog-posts">
       <h1>{pageTitle}</h1>
       {

@@ -122,7 +122,7 @@ const { Content } = await render(project);
    }
 </style>
 
-<BaseLayout>
+<BaseLayout pageTitle={project.data.title} metaDesc={project.data.description}>
    <header class="project-header">
       <div class="project-header-inner">
          <Image
