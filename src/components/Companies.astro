@@ -9,9 +9,11 @@ const companies = await getCollection("companies");
       max-width: var(--max-width);
       margin: 2rem auto;
       padding-inline: 1rem;
+      text-align: center;
 
-      & h3 {
-         margin-block-end: 1.4rem;
+      & h4 {
+         font-family: var(--font-heading);
+         font-weight: 600;
       }
 
       img {
@@ -23,7 +25,7 @@ const companies = await getCollection("companies");
          display: flex;
          flex-direction: row;
          flex-wrap: wrap;
-         align-items: center;
+         justify-content: space-evenly;
          gap: 2rem;
          padding-block: 2rem;
       }
@@ -41,7 +43,7 @@ const companies = await getCollection("companies");
    }
 </style>
 <section class="companies">
-   <h3>Firms I worked with</h3>
+   <h4>Firms I worked with</h4>
    <ul>
       {
          companies.map((company) => (
