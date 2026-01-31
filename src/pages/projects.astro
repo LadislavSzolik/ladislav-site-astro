@@ -1,0 +1,16 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import FeaturedProjects from "../components/FeaturedProjects.astro";
+const pageTitle = "Selected projects";
+---
+
+<style>
+   .projects {
+      padding-block-start: 72px;
+   }
+</style>
+<BaseLayout pageTitle={pageTitle}>
+   <main class="projects">
+      <FeaturedProjects />
+   </main>
+</BaseLayout>

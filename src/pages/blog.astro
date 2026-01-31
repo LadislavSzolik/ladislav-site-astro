@@ -1,0 +1,43 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+const allBlogPosts = (await getCollection("blog")).sort(
+   (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+);
+const pageTitle = "Blog";
+---
+
+<style>
+   .blog-posts {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      text-align: center;
+      max-width: var(--max-width-blog);
+      padding-block-start: 72px;
+      padding-inline: 1rem;
+      margin: 0 auto;
+   }
+
+   .date {
+      font-size: var(--body-01);
+      color: var(--text-secondary);
+      margin: 0.4rem 0;
+   }
+</style>
+<BaseLayout pageTitle={pageTitle}>
+   <main class="blog-posts">
+      <h1>{pageTitle}</h1>
+      {
+         allBlogPosts.map((post) => (
+            <article>
+               <h3>
+                  <a href={`/blog/${post.id}`}>{post.data.title}</a>
+               </h3>
+               <p class="date">{post.data.date.toLocaleDateString()}</p>
+               <p>{post.data.description}</p>
+            </article>
+         ))
+      }
+   </main>
+</BaseLayout>

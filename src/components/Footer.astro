@@ -2,28 +2,47 @@
 
 ---
 
+<style>
+  footer {
+    .container {
+      font-size: 0.9rem;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding-block: 1rem;
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      align-items: center;
+    }
+    .social-link {
+      color: var(--link-primary);
+    }
+    .social-link:hover {
+      color: var(--link-primary-hover);
+    }
+  }
+</style>
 <footer>
   <div class="container">
-    <div class="social-links">
-      <a
-        href="mailto:szolik.ladislav@gmail.com?subject=Saying%20hello"
-        class="social-link"
-        title="Email"
-        aria-label="Send email"
-      >
-        E-mail
-      </a>
-      <a
-        href="https://www.linkedin.com/in/ladislav-szolik-30278593/"
-        class="social-link"
-        title="Instagram"
-        aria-label="Visit LinkedIn profile"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        LinkedIn
-      </a>
-    </div>
+    <a
+      href="mailto:szolik.ladislav@gmail.com?subject=Saying%20hello"
+      class="social-link"
+      title="Email"
+      aria-label="Send email"
+    >
+      E-mail
+    </a>
+    <a
+      href="https://www.linkedin.com/in/ladislav-szolik-30278593/"
+      class="social-link"
+      title="Instagram"
+      aria-label="Visit LinkedIn profile"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      LinkedIn
+    </a>
+
     <p>&copy; {new Date().getFullYear()} Ladislav Szolik. All rights reserved.</p>
   </div>
 </footer>

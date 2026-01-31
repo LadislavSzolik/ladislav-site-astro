@@ -1,0 +1,90 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getCollection, render } from "astro:content";
+export async function getStaticPaths() {
+   const blog = await getCollection("blog");
+   return blog.map((blogPost) => ({
+      params: { id: blogPost.id },
+      props: { blogPost },
+   }));
+}
+
+const { blogPost } = Astro.props;
+const { Content } = await render(blogPost);
+const pageTitle = blogPost.data.title;
+const published = "Published on " + blogPost.data.date.toLocaleDateString();
+---
+
+<style>
+   .blog-main {
+      max-width: var(--max-width-blog);
+      margin: 0 auto;
+      padding-block-start: 72px;
+      padding-inline: 1rem;
+      font-size: 1.08rem;
+
+      ul,
+      ol {
+         padding-block: 0.6rem;
+      }
+
+      ul {
+         padding-left: 1.2em;
+         list-style-position: outside;
+      }
+
+      & ol {
+         padding-inline-start: 26px;
+      }
+
+      & ol li {
+         list-style: none;
+         padding-inline-start: 16px;
+         position: relative;
+      }
+
+      & ol li::marker {
+         content: counter(list-item) ". ";
+         padding-inline-start: 0;
+         position: absolute;
+         color: var(--text-attention);
+         left: 0;
+      }
+
+      h1 {
+         font-size: var(--heading-02);
+         font-family: var(--font-heading);
+         padding-block-end: 1rem;
+      }
+      h2 {
+         font-size: var(--heading-03);
+         font-family: var(--font-heading);
+         padding-block: 1rem 0.75rem;
+      }
+      img {
+         width-max: 80ch;
+         height: auto;
+      }
+      p {
+         padding-block: 0.4rem;
+      }
+      .publish-date {
+         color: var(--text-secondary);
+      }
+      .footnotes {
+         h2 {
+            font-size: var(--font-body);
+            font-weight: 600;
+            padding-block: 0.4rem 0.2rem;
+         }
+      }
+   }
+</style>
+
+<BaseLayout pageTitle={pageTitle}>
+   <main class="blog-main">
+      <h1>{pageTitle}</h1>
+      <p class="publish-date">{published}</p>
+      <Content />
+   </main>
+</BaseLayout>

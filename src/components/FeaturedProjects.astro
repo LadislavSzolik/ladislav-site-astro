@@ -1,0 +1,66 @@
+---
+import { getCollection, getEntry } from "astro:content";
+import { Image } from "astro:assets";
+
+const projects = (await getCollection("projects")).sort(
+   (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+);
+const sectionTitle = "Selected projects";
+---
+
+<style>
+   .featured-projects {
+      max-width: var(--max-width);
+      margin: 2rem auto;
+      padding-inline: 1rem;
+      text-align: center;
+
+      & h2 {
+         margin-block-end: 1rem;
+      }
+   }
+   .project-img {
+      max-width: 800px;
+      width: 100%;
+      height: auto;
+      mask-image: linear-gradient(rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 0) 85%);
+   }
+   .project-desc {
+      padding-block: 0.5rem 1rem;
+   }
+</style>
+
+<section class="featured-projects">
+   <h2>{sectionTitle}</h2>
+   <project-list>
+      {
+         projects.map((project) => (
+            <article>
+               <Image
+                  src={project.data.client.logo}
+                  alt={project.data.client.name}
+                  width="180"
+               />
+               <h3>
+                  <a href={`/projects/${project.id}`}>{project.data.title}</a>
+               </h3>
+               <p class="project-desc">{project.data.description}</p>
+               <Image
+                  class="project-img"
+                  src={project.data.image}
+                  alt={project.data.title}
+               />
+            </article>
+         ))
+      }
+   </project-list>
+   <p>
+      To see my full portfolio, please
+      <a
+         href="mailto:szolik.ladislav@gmail.com?subject=Saying%20hello"
+         aria-label="Send e-mail"
+      >
+         e-mail me.
+      </a>
+   </p>
+</section>

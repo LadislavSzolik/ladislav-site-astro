@@ -1,0 +1,32 @@
+[
+   {
+      "id": 1,
+      "name": "Accenture AG",
+      "logo": "../../images/logos/accenture-logo.svg",
+      "website": "https://www.accenture.com/"
+   },
+   {
+      "id": 2,
+      "name": "Ärztekasse Genossenschaft",
+      "logo": "../../images/logos/aerztekasse-logo.svg",
+      "website": "https://www.aerztekasse.ch/"
+   },
+   {
+      "id": 3,
+      "name": "Credit Suisse AG (Today UBS AG)",
+      "logo": "../../images/logos/cs-logo.svg",
+      "website": "https://www.ubs.com/"
+   },
+   {
+      "id": 4,
+      "name": "ELCA Informatik AG",
+      "logo": "../../images/logos/elca-logo.png",
+      "website": "https://www.elca.ch/de"
+   },
+   {
+      "id": 5,
+      "name": "Swisscom AG",
+      "logo": "../../images/logos/swisscom-logo.svg",
+      "website": "https://www.swisscom.ch/de/business.html"
+   }
+]

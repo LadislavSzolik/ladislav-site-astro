@@ -1,0 +1,71 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { Image } from "astro:assets";
+import pictureJapan from "../images/about/japan-picture.webp";
+---
+
+<style>
+   .about {
+      max-width: var(--max-width);
+      margin-inline: auto;
+      padding: 4rem 1rem;
+      line-height: 1.6;
+      font-size: 1.2rem;
+      text-align: center;
+
+      & h1 {
+         margin-bottom: 2rem;
+      }
+
+      & img {
+         height: auto;
+         max-width: 480px;
+         border-radius: var(--radius);
+      }
+   }
+   .about-layout {
+      text-align: left;
+      display: flex;
+      flex-direction: row;
+      gap: 2rem;
+      align-items: start;
+   }
+   @media (max-width: 768px) {
+      .about-layout {
+         text-align: center;
+         flex-direction: column;
+         align-items: center;
+      }
+   }
+</style>
+<BaseLayout>
+   <main class="about">
+      <h1>About</h1>
+      <div class="about-layout">
+         <div>
+            <p>
+               I’m Ladislav Szolik, a UX designer and Software Engineer with
+               masters degree in applied Informatics based in Zürich,
+               Switzerland.
+            </p>
+            <br />
+            <p>
+               I’ve spent the last decade working across the entire product
+               lifecycle — from early concept validation to launching full-scale
+               web applications. I’ve designed and delivered experiences for
+               major brands like Swisscom, Credit Suisse (today UBS), and
+               Ärztekasse, and began my career in software engineering at
+               Accenture.
+            </p>
+            <br />
+            <p>
+               I believe good design is practical, honest, and focused on real
+               people. Whether you’re launching a new product or improving an
+               existing one, I bring a collaborative, thoughtful approach to
+               every project.
+            </p>
+         </div>
+         <Image src={pictureJapan} alt="Photo about me" />
+      </div>
+   </main>
+</BaseLayout>

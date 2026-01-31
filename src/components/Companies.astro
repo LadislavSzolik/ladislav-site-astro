@@ -1,0 +1,56 @@
+---
+import { Image } from "astro:assets";
+import { getCollection } from "astro:content";
+const companies = await getCollection("companies");
+---
+
+<style>
+   .companies {
+      max-width: var(--max-width);
+      margin: 2rem auto;
+      padding-inline: 1rem;
+
+      & h3 {
+         margin-block-end: 1.4rem;
+      }
+
+      img {
+         width: auto;
+         max-width: 130px;
+         height: 30px;
+      }
+      ul {
+         display: flex;
+         flex-direction: row;
+         flex-wrap: wrap;
+         align-items: center;
+         gap: 2rem;
+         padding-block: 2rem;
+      }
+      li {
+         list-style: none;
+      }
+      a {
+         -webkit-filter: grayscale(1);
+         filter: grayscale(1);
+      }
+      a:hover {
+         -webkit-filter: grayscale(0);
+         filter: grayscale(0);
+      }
+   }
+</style>
+<section class="companies">
+   <h3>Firms I worked with</h3>
+   <ul>
+      {
+         companies.map((company) => (
+            <li>
+               <a href={company.data.website} target="_blank">
+                  <Image src={company.data.logo} alt={company.data.name} />
+               </a>
+            </li>
+         ))
+      }
+   </ul>
+</section>

@@ -1,41 +1,41 @@
 ---
+import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import "../styles/global.css";
 const { pageTitle } = Astro.props;
 ---
 
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Crimson+Text:wght@400;600&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="shortcut icon" href="/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="manifest" href="/site.webmanifest" />
-    <link rel="manifest" href="/site.webmanifest" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>{pageTitle}</title>
-  </head>
-  <body>
-    <header>
-      <div class="header-container">
-        <div class="header-content">
-          <h1>{pageTitle}</h1>
-          <nav class="nav-menu">
-            <a class="nav-link" href="/">Home</a>
-            <a class="nav-link" href="/about/">About</a>
-          </nav>
-        </div>
-      </div>
-    </header>
-    <slot />
-    <Footer />
-  </body>
+   <head>
+      <meta charset="utf-8" />
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link
+         href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Crimson+Text:wght@400;600&display=swap"
+         rel="stylesheet"
+      />
+      <link
+         rel="icon"
+         type="image/png"
+         href="/favicon-96x96.png"
+         sizes="96x96"
+      />
+      <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+      <link rel="shortcut icon" href="/favicon.ico" />
+      <link
+         rel="apple-touch-icon"
+         sizes="180x180"
+         href="/apple-touch-icon.png"
+      />
+      <link rel="manifest" href="/site.webmanifest" />
+      <meta name="viewport" content="width=device-width" />
+      <meta name="generator" content={Astro.generator} />
+      <title>{pageTitle}</title>
+   </head>
+   <body>
+      <Header />
+      <!-- Each page needs at least 62px top padding. Otherwise header overlaps the content.  -->
+      <slot />
+      <Footer />
+   </body>
 </html>

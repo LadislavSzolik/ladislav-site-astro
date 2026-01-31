@@ -1,12 +1,89 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import FeaturedBlogs from "../components/FeaturedBlogs.astro";
+import FeaturedProjects from "../components/FeaturedProjects.astro";
+import Companies from "../components/Companies.astro";
 const pageTitle = "Ladislav's site";
 ---
 
+<style>
+   head-bcg {
+      padding: 72px 1rem 2rem 1rem;
+      display: block;
+      background: linear-gradient(34deg, #ffe6ea 0%, #cbeaf2 100%);
+   }
+   head-content {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: flex;
+      gap: 3rem;
+      align-items: center;
+      flex-direction: row;
+      p {
+         font-size: 1.4rem;
+      }
+      a {
+         color: var(--text-primary);
+         text-underline-offset: 8px;
+         text-decoration: underline 1px dotted;
+      }
+      a:hover {
+         text-decoration: underline 2px;
+      }
+
+      img {
+         --f: 0.05; /* the parallax factor */
+         --r: 10px;
+         --_f: calc(100% * var(--f)/(1 + var(--f)));
+         --_a: calc(90deg * var(--f));
+         aspect-ratio: calc(1 + var(--f));
+         object-fit: cover;
+         clip-path: inset(0 var(--_f) 0 0 round var(--r));
+         transform: perspective(300px) var(--_t, rotateY(var(--_a)));
+         transition: 0.5s;
+         cursor: pointer;
+      }
+
+      img:hover {
+         clip-path: inset(0 0 0 var(--_f) round var(--r));
+         --_t: translateX(calc(-1 * var(--_f))) rotateY(calc(-1 * var(--_a)));
+      }
+   }
+   @media (max-width: 768px) {
+      head-content {
+         flex-direction: column-reverse;
+         gap: 1rem;
+         padding-inline: 1rem;
+      }
+   }
+</style>
 <BaseLayout pageTitle={pageTitle}>
-  <main class="main-container">
-    Ladislav Szolik, Senior UX Expert at Ärztekasse. Former mobile and web UX designer at Swisscom and Credit Suisse,
-    with software engineering experience at Accenture. Slovak-born, Zürich-based
-    <img src="/images/profile_photo.webp" alt="Profile picture" width="344" height="344" />
-  </main>
+   <main>
+      <head-bcg>
+         <head-content>
+            <p>
+               Ladislav Szolik designs medical practice software at <a
+                  href="https://www.aerztekasse.ch/"
+                  target="_blank">Ärztekasse Genossenschaft</a
+               >. Previously, he reimagined B2B software at <a
+                  href="https://www.swisscom.ch/de/business.html"
+                  target="_blank">Swisscom AG</a
+               >, and crafted a mobile banking application at Credit Suisse AG.
+               Before all of this, he worked as a software engineer at <a
+                  href="https://www.accenture.com/"
+                  target="_blank">Accenture</a
+               >. Slovak-born, Zürich-based.
+            </p>
+            <img
+               src="/images/profile-photo.webp"
+               alt="Profile picture"
+               width="300"
+               height="300"
+            />
+         </head-content>
+      </head-bcg>
+      <Companies />
+      <FeaturedBlogs />
+      <FeaturedProjects />
+   </main>
 </BaseLayout>
