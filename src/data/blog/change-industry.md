@@ -1,30 +1,35 @@
 ---
-title: "From Telecom to Healthcare"
-date: 2024-03-01
-description: After designing B2B web experiences at Swisscom AG, I felt ready for a new challenge. Big corporates tought me how to navigate, get things done in a large organisations. But I wanted something where innovation is happening with higher speed.
+title: "Change of industry: from telecom to healthcare"
+date: 2024-06-13
+description: I started a new position at Ärztekasse Genossenschaft. I am reflecting on my recent career change and the 2 years I worked for Swisscom AG.
 visible: true
 tags: [ "hand-off"]
 ---
 
-## Why I made the move
+It has been two years since I worked on the product design of various business-to-business (B2B) web applications at Swisscom AG. There were many changes since I joined: The very first CEO got retired, COVID pushed business customers to use Zoom and Teams instead of landline phones, and new near-shore centers were opened in Riga, Latvia, and Rotterdam, Netherlands. 
 
-After designing B2B web experiences at Swisscom AG, I felt ready for a new challenge. Big corporates tought me how to navigate, get things done in a large organisations. But I wanted something where innovation is happening with higher speed.
+## A reason to leave
 
-When Ärztekasse AG offered me a Senior UX Expert role, I saw an opportunity to apply my skills where they could truly matter: healthcare. The stakes felt higher, the problems more personal.
+It was exciting to redesign the web portal used by Swisscom partners. Previously, I never worked so closely with users. Developing this software was a true collaboration. But in the end, it was still a large corporation with many layers of stakeholders and long delivery cycles. My curiosity grew to experience working with smaller and agile teams and shipping software increments in a shorter period of time. 
 
-## What I transferred
+Ärztekasse Genossenschaft is a 60-year-old firm with different products and services. A few years back, they opened a new department to develop the next medical practice management software. This is where I saw an opportunity and joined as a Senior UX Expert. (Regarding the role name - the department lead likes to invent not only software but roles as well.)
 
-- Complex user journey and organisations.
-- Handle complex design projects with large design system.
-- Manage multiple stakeholders with competing priorities.
+## Skill I transfered
 
-## What I had to learn
+These were the top 3 skills learned and retained from my previous roles (hard or soft):
 
-- Healthcare UX operates within strict compliance frameworks. Privacy isn't just good practice—it's law.
-- Medical terminology, insurance processes, and healthcare workflows required learning. But this mirrors any UX role we're constantly becoming mini-experts in our users' worlds.
+- Understanding complex user journeys
+- Managing multiple stakeholders with competing priorities
+- Working on various projects simultaneously while delivering high-quality work
+
+## What I learned
+
+After half a year, I noticed few things:
+
+- For medical practitioners and assistants, every click and every pixel counts. The software needs to be efficient and information-dense yet not overwhelming.
+- Accessing users in Switzerland presents a challenge due to the high demand for medical practitioners, as the country has a shortage of them.
+- It is critical to learn and use the terminology and their processes to design even a small feature. 
 
 ## Conclusion
 
-This transition revealed something crucial: industry expertise isn't what makes a great UX designer. It's the ability to understand users, solve problems systematically, and communicate across teams. The rest can be learned.
-
-My telecom background actually provided unique value. I brought fresh perspectives to healthcare UX challenges, questioning assumptions that industry veterans took for granted.
+The department consists of approximately forty people. Decision making is fast, and new releases into production happen every two weeks. There is much less administrative overhead, which results in fewer meetings and more time to research, design, and collaborate with users and teams.
